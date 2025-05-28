@@ -8,10 +8,12 @@ const App: React.FC = () => {
   const [token, setToken] = useState<string | null>(null);
   const [results, setResults] = useState<any>(null);
 
+  // Função para simular login e salvar token
   const handleLogin = (newToken: string) => {
     setToken(newToken);
   };
 
+  // Função para salvar resultados do upload/processamento
   const handleSetResults = (data: any) => {
     setResults(data);
   };
@@ -42,11 +44,7 @@ const App: React.FC = () => {
         <Route
           path="/results"
           element={
-            token ? (
               <Results results={results} />
-            ) : (
-              <Navigate to="/" replace />
-            )
           }
         />
       </Routes>
