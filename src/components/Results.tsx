@@ -1,4 +1,8 @@
-import React, { useState } from 'react';
+import * as React from "react";
+// ou, na moral, mais direto:
+import { useState } from "react";
+
+import type { JSX } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const Results: React.FC = () => {

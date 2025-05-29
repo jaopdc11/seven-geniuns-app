@@ -45,7 +45,7 @@ const App: React.FC = () => {
           path="/results"
           element={
             token && results ? (
-              <Results results={results} />
+              <Results />
             ) : (
               <Navigate to="/" replace />
             )
