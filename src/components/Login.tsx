@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { login } from '../services/authService';
 import { useNavigate } from 'react-router-dom';
 import Toast from './Toast';
@@ -112,7 +112,7 @@ const Login: React.FC<LoginProps> = ({ onLogin }) => {
                     {/* Logo */}
                     <div className="mb-6 w-24 h-24 bg-white bg-opacity-30 rounded-full flex items-center justify-center shadow-lg">
                         <img
-                            src="./src/logo.png"
+                            src="/seven-geniuns-app/logo.png"
                             alt="SevenGenius Logo"
                             className="rounded-full"
                             draggable="false"
