@@ -8,19 +8,19 @@ const App: React.FC = () => {
   const [token, setToken] = useState<string | null>(null);
   const [results, setResults] = useState<any>(null);
 
-  // Função para simular login e salvar token
+  // Função pra guardar o token depois do login, seu preguiçoso
   const handleLogin = (newToken: string) => {
     setToken(newToken);
   };
 
-  // Função para salvar resultados do upload/processamento
+  // Função pra salvar os resultados do upload/processamento
   const handleSetResults = (data: any) => {
     setResults(data);
   };
 
   return (
     <BrowserRouter>
-      <Routes>
+      <Routes key={token ? 'logged-in' : 'logged-out'}>
         <Route
           path="/"
           element={
@@ -44,7 +44,11 @@ const App: React.FC = () => {
         <Route
           path="/results"
           element={
+            token && results ? (
               <Results results={results} />
+            ) : (
+              <Navigate to="/" replace />
+            )
           }
         />
       </Routes>
